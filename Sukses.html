@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Subscription Confirmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-800 flex items-center justify-center h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-96">
+        <div class="flex items-center mb-6">
+            <!-- Icon centang di sebelah kiri -->
+            <div class="bg-pink-500 rounded-full text-white w-12 h-12 flex items-center justify-center mr-4">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-800">Thanks for subscribing!</h1>
+        </div>
+        <p class="text-gray-600 mb-6">A confirmation email has been sent to <span
+                class="font-bold text-gray-800">ash@loremcompany.com</span>. Please open it and click the button inside
+            to confirm your subscription.</p>
+        <button id="dismiss-btn"
+            class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition duration-300">Dismiss
+            message</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        // Arahkan kembali ke halaman index.html saat tombol Dismiss diklik
+        const dismissButton = document.getElementById('dismiss-btn');
+        dismissButton.addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
