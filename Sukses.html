@@ -15,8 +15,8 @@
             </div>
             <h1 class="text-2xl font-bold text-gray-800">Thanks for subscribing!</h1>
         </div>
-        <p class="text-gray-600 mb-6">A confirmation email has been sent to <span
-                class="font-bold text-gray-800">ash@loremcompany.com</span>. Please open it and click the button inside
+        <p class="text-gray-600 mb-6">A confirmation email has been sent to <span class="font-bold text-gray-800"
+                id="emailDisplay">ash@loremcompany.com</span>. Please open it and click the button inside
             to confirm your subscription.</p>
         <button id="dismiss-btn" class="text-white px-4 py-2 rounded transition duration-300"
             style="background-color: #2d3748;" onmouseover="this.style.backgroundColor='hsl(4, 100%, 67%)'"
@@ -32,6 +32,14 @@
         dismissButton.addEventListener('click', function () {
             window.location.href = 'index.html';
         });
+        // email inputan
+        const email = localStorage.getItem('subscriberEmail');
+        const emailDisplay = document.getElementById('emailDisplay');
+        if (email) {
+            emailDisplay.textContent = email;
+        } else {
+            emailDisplay.textContent = 'No email found!';
+        }
     </script>
 </body>
 

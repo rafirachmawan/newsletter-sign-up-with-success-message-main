@@ -50,12 +50,14 @@
       const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
       if (emailPattern.test(emailValue)) {
-        // Jika email valid, arahkan ke halaman sukses
-        window.location.href = 'Sukses.html';
+        // Simpan email ke localStorage
+        localStorage.setItem('subscriberEmail', emailValue);
+        // Redirect ke halaman sukses
+        window.location.href = 'sukses.html';
       } else {
-        // Jika email tidak valid
-        errorMessage.classList.remove('hidden');  // Menampilkan pesan error
-        emailInput.classList.add('border-pink-600', 'bg-pink-100');  // Mengubah warna input jadi merah muda
+        // Tampilkan pesan error jika email tidak valid
+        errorMessage.classList.remove('hidden');
+        emailInput.classList.add('border-pink-600', 'bg-pink-100');
       }
     });
   </script>
